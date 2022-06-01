@@ -1,0 +1,77 @@
+{
+  "productList": [
+    {
+      "productName": "Celular",
+      "category": "Electronic",
+      "freshness": "Brand New",
+      "price": 45,
+      "comment": "New Cell",
+      "date": "2022-05-11T05:00:00.000Z",
+      "id": 3
+    },
+    {
+      "productName": "Mango",
+      "category": "Vegetables",
+      "freshness": "Second Hand",
+      "price": 23,
+      "comment": "New Buy",
+      "date": "2020-05-23T05:00:00.000Z",
+      "id": 4
+    },
+    {
+      "productName": "Carro",
+      "category": "Miscellaneous",
+      "freshness": "Brand New",
+      "price": 6747,
+      "comment": "New Buy",
+      "date": "2022-05-31T05:00:00.000Z",
+      "id": 5
+    },
+    {
+      "productName": "cake",
+      "category": "Miscellaneous",
+      "freshness": "Brand New",
+      "price": 34,
+      "comment": "dfsdfdf",
+      "date": "2020-05-25T05:00:00.000Z",
+      "id": 6
+    },
+    {
+      "productName": "Bread",
+      "category": "Miscellaneous",
+      "freshness": "Second Hand",
+      "price": 63,
+      "comment": "Masas",
+      "date": "2022-05-18T05:00:00.000Z",
+      "id": 7
+    },
+    {
+      "productName": "Juice",
+      "category": "Vegetables",
+      "freshness": "Brand New",
+      "price": 434,
+      "comment": "ssdfsdf",
+      "date": "2022-05-13T05:00:00.000Z",
+      "id": 8
+    },
+    {
+      "productName": "Apple",
+      "category": "Vegetables",
+      "freshness": "Second Hand",
+      "price": 22,
+      "comment": "New Buy",
+      "date": "2022-05-30T05:00:00.000Z",
+      "id": 11
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
