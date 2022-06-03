@@ -17,3 +17,44 @@ td, th {
   max-width: 1200px;
   margin: 0 auto;
 }
+.contenedor{
+  width:90px;
+  height:240px;
+  position:absolute;
+  right:0px;
+  bottom:0px;
+}
+.floating-button{
+  width:60px;
+  height:60px;
+  border-radius:100%;
+  /*background:#F44336;*/
+  right:0;
+  bottom:0;
+  position:absolute;
+  border:none;
+  outline:none;
+  color:#FFF;
+  font-size:36px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition:.3s;
+  margin: 50px 100px;
+  top: 60px;
+}
+span{
+  transition:.5s;
+}
+
+/*:host {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  height: 100%;*/
+/*}*/
+
+.mat-drawer{
+  width: 260px;
+  background: #7f00b2;
+}
+.mat-drawer-container{
+  height:100%;
+}

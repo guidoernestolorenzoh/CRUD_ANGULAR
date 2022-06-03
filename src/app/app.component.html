@@ -1,3 +1,22 @@
+<!--<app-header></app-header>-->
+<!--<router-outlet></router-outlet>-->
+<!--<app-sidenav></app-sidenav>-->
+<!--<app-product></app-product>-->
+
+
+<!--DRAWER-->
+<!--<mat-drawer-container>-->
+<!--  <mat-drawer mode="side" opened="true">-->
+<!--    <app-sidenav></app-sidenav>-->
+<!--  </mat-drawer>-->
+<!--  <mat-drawer-content>-->
+<!--    <app-header></app-header>-->
+<!--    <router-outlet></router-outlet>-->
+<!--  </mat-drawer-content>-->
+<!--</mat-drawer-container>-->
+
+
+
 
 <mat-toolbar color="primary">
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
@@ -6,8 +25,13 @@
   <span>My App CRUD</span>
   <span class="example-spacer"></span>
 
-  <button mat-raised-button color="warn" (click)="openDialog()">Add Product</button>
+<!--  <button mat-raised-button color="warn" (click)="openDialog()">Add Product</button>-->
 </mat-toolbar>
+
+
+
+
+
 
 <div class="container">
   <div style="margin-top:10px;">
@@ -86,6 +110,9 @@
           </td>
         </ng-container>
 
+
+<!--        <button mat-raised-button color="warn" >Add Product</button>-->
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
@@ -97,6 +124,17 @@
 
       <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
     </div>
+
+    <div class="contenedor">
+      <button class="floating-button" mat-raised-button color="primary" (click)="openDialog()">
+        <span>+</span>
+      </button>
+<!--      <button class="botonF1">-->
+<!--        <span>+</span>-->
+<!--      </button>-->
+    </div>
+
+
 
   </div>
 
