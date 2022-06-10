@@ -6,6 +6,8 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {SelectionModel} from '@angular/cdk/collections';
+import Swal from "sweetalert2";
+import {error} from "@angular/compiler/src/util";
 
 @Component({
   selector: 'app-root',
@@ -43,7 +45,12 @@ export class AppComponent implements OnInit {
           this.dataSource.sort = this.sort;
         },
         error: (err) => {
-          alert("Error while fetching the records");
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Error while fetching the records!',
+          })
+          // alert("Error while fetching the records");
         }
       })
   }
@@ -68,18 +75,50 @@ export class AppComponent implements OnInit {
       }
     })
   }
-  deleteProduct(id:number){
-    this.api.deleteProduct(id)
-      .subscribe({
-        next: (res) => {
-          alert("Product Deleted Successfully");
-          this.getAllProducts();
+
+  showDeleteModal(id:number) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+        this.api.deleteProduct(id)
+          .subscribe((res) => {
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            )
+            this.getAllProducts();
         },
-        error:()=>{
-          alert("Error While deleting the product")
-        }
-      })
+          error => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+          })
+          })
+      }
+    })
   }
+
+  // deleteProduct(id:number){
+  //   this.api.deleteProduct(id)
+  //     .subscribe({
+  //       next: (res) => {
+  //         alert("Product Deleted Successfully");
+  //         this.getAllProducts();
+  //       },
+  //       error:()=>{
+  //         alert("Error While deleting the product")
+  //       }
+  //     })
+  // }
 
 
   // isAllSelected() {
@@ -109,5 +148,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.getAllProducts();
   }
+
 
 }

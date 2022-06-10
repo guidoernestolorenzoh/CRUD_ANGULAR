@@ -32,8 +32,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
 // import { ProductComponent } from './product/product.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
-
-
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -70,7 +69,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatCardModule,
     MatMenuModule,
     LayoutModule,
-    MatSidenavModule
+    MatSidenavModule,
+    SweetAlert2Module,
   ],
   providers: [],
   bootstrap: [AppComponent]

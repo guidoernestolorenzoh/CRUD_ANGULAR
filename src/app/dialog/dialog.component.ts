@@ -3,6 +3,7 @@ import {FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {ApiService} from "../services/api.service";
 
 import {MatDialogRef, MAT_DIALOG_DATA} from "@angular/material/dialog"
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-dialog',
@@ -50,12 +51,22 @@ export class DialogComponent implements OnInit {
       this.api.postProduct(this.productForm.value)
         .subscribe({
           next: (res) => {
-            alert("Product Add Successfully")
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Created Product!!',
+            showConfirmButton: true,
+            timer: 2500
+          })
             this.productForm.reset();
             this.dialogRef.close('save');
           },
           error: () => {
-            alert("Error while adding product")
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!',
+            })
           }
         })
     }
@@ -68,12 +79,22 @@ export class DialogComponent implements OnInit {
     this.api.putProduct(this.productForm.value, this.editData.id)
       .subscribe({
         next: (res)=>{
-          alert("Product Update Successfully");
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Updated Product!!',
+            showConfirmButton: true,
+            timer: 2500
+          })
           this.productForm.reset();
           this.dialogRef.close('updated');
         },
         error: (err) => {
-          alert("Error while updating the product");
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+          })
         }
       })
   }
